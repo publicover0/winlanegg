@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
-import Champion from './components/Champion';
-
-let champions = [  {      name: "Aatrox",      champId: 1  },  {      name: "Ahri",      champId: 2  },  {      name: "Akali",      champId: 3  },  {      name: "Alistar",      champId: 4  },  {      name: "Amumu",      champId: 5  },  {      name: "Anivia",      champId: 6  },  {      name: "Annie",      champId: 7  },  {      name: "Aphelios",      champId: 8  },  {      name: "Ashe",      champId: 9  },  {      name: "AurelionSol",      champId: 10  },  {      name: "Azir",      champId: 11  },  {      name: "Bard",      champId: 12  },  {      name: "Blitzcrank",      champId: 13  }];
+import ChampionList from './components/ChampionList';
+import MatchupInfo from './components/MatchupInfo';
 
 function App() {
   return (
-    <div className="App">
+    <div class="all">
+      <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid winlane-gg">
+          <span class="navbar-brand mb-0 h1">Winlane.GG</span>
+        </div>
+      </nav>
 
-      <header className="App-header">
-        {champions.map((champion, index) => (
+      <table>
+        <tr>
+          <td>
+            <div class="champion-pane-left">
+              <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand"> Choose your champion:</span>
+                <form>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                </form>
+              </nav>
 
-          
+              <div class="champion-pane-left-list">
+                <ChampionList />    
+              </div>
+            </div>
+          </td>
 
-          <div key={index}>
-            <Champion name={champion.name} champId={champion.champId} />  
-          </div>
-        ))}
-      </header>
+          <td>
+            <div class="matchup-info">
+              <MatchupInfo MyChampion="Camille" EnemyChampion="Aatrox" />
+            </div>
+          </td>
+
+          <td>
+            <div class="champion-pane-right">
+              <nav class="navbar navbar-light bg-light champion-pane-right-nav">
+                  <span class="navbar-brand"> Choose enemy champion:</span>
+                  <form>
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                  </form>
+              </nav>
+
+              <div class="champion-pane-right-list">
+                <ChampionList />
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+
     </div>
   );
 }
