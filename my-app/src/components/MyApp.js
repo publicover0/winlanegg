@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import ChampionList from "./ChampionList";
 import MatchupInfo from "./MatchupInfo";
 
+let matchups = require("./Matchups.json");
+
 class MyApp extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             MyChampion: "Aatrox",
-            EnemyChampion: "Akali"
+            EnemyChampion: "Akali",
+            EnemyChampionList: [],
+            AllyChampionList: []
         };
     }
 
@@ -39,7 +43,7 @@ class MyApp extends Component {
                                 </nav>
 
                                 <div class="champion-pane-left-list">
-                                    <ChampionList updateMethod={this.LeftUpdate.bind(this)} />
+                                    <ChampionList updateMethod={this.LeftUpdate.bind(this)} EnemyChampionList={this.state.AllyChampionList}  />
                                 </div>
                                 </div>
                             </td>
@@ -60,7 +64,7 @@ class MyApp extends Component {
                                 </nav>
 
                                 <div class="champion-pane-right-list">
-                                    <ChampionList updateMethod={this.RightUpdate.bind(this)} />
+                                    <ChampionList updateMethod={this.RightUpdate.bind(this)} EnemyChampionList={this.state.EnemyChampionList} />
                                 </div>
                                 </div>
                             </td>
@@ -75,11 +79,18 @@ class MyApp extends Component {
 
     LeftUpdate (champion) {
         this.setState(state => ({MyChampion: champion}))
-        console.log(this.state.MyChampion)
+        this.GetEnemyChampionList(champion)
     }
     RightUpdate (champion) {
         this.setState(state => ({EnemyChampion: champion}))
-        console.log(this.state.EnemyChampion)
+    }
+    GetEnemyChampionList (champion) {
+        let EnemyChampList = [];
+        let AllyChampionMatchupList = matchups[champion];
+        Object.keys(AllyChampionMatchupList).forEach(function(key) {
+            EnemyChampList.push([key]);
+        })
+        this.setState(state => ({EnemyChampionList: EnemyChampList}))
     }
 }
 

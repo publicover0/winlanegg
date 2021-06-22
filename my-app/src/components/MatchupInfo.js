@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Accordion, Card, Button, Jumbotron } from 'react-bootstrap';
 import '../App.css';
 
-let matchups = require("./Camille.json");
+let matchups = require("./Matchups.json");
 
 class MatchupInfo extends React.Component {
     constructor(props){
@@ -17,7 +17,8 @@ class MatchupInfo extends React.Component {
         
         let i = 0;
         let arr = [];
-        let matchup = matchups[this.props.EnemyChampion];
+        let matchupList = matchups[this.props.MyChampion];
+        let matchup = matchupList[this.props.EnemyChampion];
 
         Object.keys(matchup).forEach(function(key) {
             arr.push([key,matchup[key]]);
