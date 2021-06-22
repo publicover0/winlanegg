@@ -5,6 +5,14 @@ import '../App.css';
 let matchups = require("./Camille.json");
 
 class MatchupInfo extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            MyChampion: props.MyChampion,
+            EnemyChampion: props.EnemyChampion
+        }
+    }
+
     render(props) {
         
         let i = 0;
@@ -28,7 +36,7 @@ class MatchupInfo extends React.Component {
                         return (
                             <Card>
                                 <Card.Header>
-                                    <Accordion.Toggle as={Button} variant="link" eventKey={i}>{data[0]}</Accordion.Toggle>
+                                    <Accordion.Toggle as={Button} variant="link" eventKey={key}>{data[0]}</Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey={i++}>
                                     <Card.Body>{data[1]}</Card.Body>
@@ -37,7 +45,7 @@ class MatchupInfo extends React.Component {
                         )
                     })}
                 </Accordion>
-        </>
+            </>
       );
     }
   }
