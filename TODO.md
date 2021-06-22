@@ -1,0 +1,2 @@
+ - Enable the search bars within the ChampionList navs. We will create a search pattern and only display champions with names including the search pattern.
+ - Narrow enemy champion list to display only champions with matchup info when MyChampion is selected. 
