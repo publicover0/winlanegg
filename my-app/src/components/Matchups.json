@@ -1,14 +1,14 @@
 {
     "Aatrox": {
         "Akali": {
-            "Akali":"",
+            "index":"2",
             "Runes":"Conq Alacrity Revitalize- Second Wind",
             "Early Itemization":"Dshield-Phage generally good but pickaxe if you have money for it",
             "Difficulty":"Hard",
             "Comments":"So you wanna bully her as mush as you can lvl 1-5 and not fight her at lvl 6. She will burst you 100-0, Fight her again at lvl 7-9 build tanky so you dont die to burst. Make sure to use auto attacks a lot while shes in your w and do qs in her shroud. Take red trinket to cc her with qs in her shroud"
         },
         "Camille": {
-            "Camille":"",
+            "index":"16",
             "Runes":"Conq Alacrity Revitalize- Second Wind",
             "Early Itemization":"D-Blade- Whip-Phage-Goredrnker. You need damage to break her shield and grasp",
             "Difficulty":"VERY HARD(it becomes easier when you fight camilles for a whole season im pretty sure ive beaten about 300 camilles at this point this lady needs nerfs)",
@@ -18,7 +18,7 @@
     "Camille": {
         "Aatrox":
         {
-            "Aatrox":"",
+            "index":"0",
             "Trading Pattern in Laning Phase":"Wait for him to use Q1 into E for poke then wait out his Q ramp up for a bit. His cds are extremly high early game without 40% cdr so if he uses it for poke/wave clear he wont have abilities to counter your all in. Always use your ult to dodge his 3rd Q in his R because he will never get to cast it twice.",
             "Wave Management":"He will auto-shove with his Q's anyway so try to keep the wave even and in the middle, never all in unless he used an ability, he heavy outdmgs your rotation",
             "Runes":"Conq-triumph-bloodline-last stand  and bash + bone plating",
@@ -27,7 +27,7 @@
         },
         "Akali":
         {
-            "Akali":"",
+            "index":"2",
             "Trading Pattern in Laning Phase":"start W and max E, poke her with W whenever its up it will sustain you thourgh  the lane, stick close to walls most akalis wont have the brain to react to your fast hookshot with E which will give u a lot of free kills, no need to rush mr besides mercs just dont eat too many Q's and you should be fine, when her 2nd R is ready spam your ultimatum on your face so you will dodge it 9/10 times.",
             "Wave Management":"Manage waves in a way that they are either close to her tower or your tower, if wave is in the middle u cant touch her at all, freezes are super broken here",
             "Runes":"Conq + second wind",

@@ -88,7 +88,7 @@ class MyApp extends Component {
         let EnemyChampList = [];
         let AllyChampionMatchupList = matchups[champion];
         Object.keys(AllyChampionMatchupList).forEach(function(key) {
-            EnemyChampList.push([key]);
+            EnemyChampList.push(AllyChampionMatchupList[key].index);
         })
         this.setState(state => ({EnemyChampionList: EnemyChampList}))
     }
