@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ChampionList from "./ChampionList";
 import MatchupInfo from "./MatchupInfo";
+import Welcome from "./Welcome";
 
 let matchups = require("./Matchups.json");
 
@@ -9,17 +10,15 @@ class MyApp extends Component {
         super(props);
 
         this.state = {
-            MyChampion: "Aatrox",
-            EnemyChampion: "Akali",
+            MyChampion: "",
+            EnemyChampion: "",
             EnemyChampionList: [],
-            AllyChampionList: []
+            AllyChampionList: [],
+            inputvalue: ""
         };
     }
 
-    handleClick = () => {
-        const childelement = this.leftChampionList.current;
-        
-    }
+    
 
     render() {
         return(
@@ -34,37 +33,23 @@ class MyApp extends Component {
                     <tbody> 
                         <tr>
                             <td>
-                                <div class="champion-pane-left">
-                                <nav class="navbar navbar-light bg-light">
-                                    <span class="navbar-brand"> Choose your champion:</span>
-                                    <form>
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                    </form>
-                                </nav>
-
-                                <div class="champion-pane-left-list">
-                                    <ChampionList updateMethod={this.LeftUpdate.bind(this)} EnemyChampionList={this.state.AllyChampionList}  />
-                                </div>
-                                </div>
+                                <ChampionList updateMethod={this.LeftUpdate.bind(this)} EnemyChampionList={this.state.AllyChampionList} filterText={this.state.inputvalue} headerText="Choose your champion!" />
                             </td>
 
                             <td>
                                 <div class="matchup-info">
-                                <MatchupInfo MyChampion={this.state.MyChampion} EnemyChampion={this.state.EnemyChampion} />
+                                    {(this.state.MyChampion !== "" && this.state.EnemyChampion !== "")
+                                    ? <MatchupInfo MyChampion={this.state.MyChampion} EnemyChampion={this.state.EnemyChampion} />
+                                    : <Welcome />
+                                    }
                                 </div>
                             </td>
 
                             <td>
                                 <div class="champion-pane-right">
-                                <nav class="navbar navbar-light bg-light champion-pane-right-nav">
-                                    <span class="navbar-brand"> Choose enemy champion:</span>
-                                    <form>
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                    </form>
-                                </nav>
 
                                 <div class="champion-pane-right-list">
-                                    <ChampionList updateMethod={this.RightUpdate.bind(this)} EnemyChampionList={this.state.EnemyChampionList} />
+                                    <ChampionList updateMethod={this.RightUpdate.bind(this)} EnemyChampionList={this.state.EnemyChampionList} headerText="Choose enemy champion!"/>
                                 </div>
                                 </div>
                             </td>

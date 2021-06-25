@@ -17,16 +17,22 @@ class MatchupInfo extends React.Component {
         
         let i = 0;
         let arr = [];
+
         let matchupList = matchups[this.props.MyChampion];
         let matchup = matchupList[this.props.EnemyChampion];
 
         Object.keys(matchup).forEach(function(key) {
             arr.push([key,matchup[key]]);
         })
+    
+        
+
+        
         
 
         return (
             <>
+                
                 <Jumbotron>
                     <h1>{this.props.MyChampion} vs {this.props.EnemyChampion}</h1>
                     <p> Click on one of the headers below to view information pertaining to this matchup. </p>
