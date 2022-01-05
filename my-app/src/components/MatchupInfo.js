@@ -15,12 +15,12 @@ class MatchupInfo extends React.Component {
 
     render(props) {
         
-        let i = 0;
-        let arr = [];
+        let eventKeyCounter = 0;
+        let matchupDataHeader = [];
         let matchup = matchups[this.props.EnemyChampion];
 
         Object.keys(matchup).forEach(function(key) {
-            arr.push([key,matchup[key]]);
+            matchupDataHeader.push([key,matchup[key]]);
         })
         
 
@@ -28,17 +28,17 @@ class MatchupInfo extends React.Component {
             <>
                 <Jumbotron>
                     <h1>{this.props.MyChampion} vs {this.props.EnemyChampion}</h1>
-                    <p> Click on one of the headers below to view information pertaining to this matchup. </p>
+                    <p> Click on one of the headers below to view information about this matchup. </p>
                 </Jumbotron>
 
                 <Accordion defaultActiveKey="0">
-                    {arr.map((data, key) => {
+                    {matchupDataHeader.map((data, key) => {
                         return (
                             <Card>
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey={key}>{data[0]}</Accordion.Toggle>
                                 </Card.Header>
-                                <Accordion.Collapse eventKey={i++}>
+                                <Accordion.Collapse eventKey={eventKeyCounter++}>
                                     <Card.Body>{data[1]}</Card.Body>
                                 </Accordion.Collapse>
                             </Card>
